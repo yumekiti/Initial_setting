@@ -19,3 +19,4 @@ x-terminal
 autoclose-html
 show-ideographic-space
 linter
+remote-ftp
