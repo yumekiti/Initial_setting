@@ -20,3 +20,4 @@ autoclose-html
 show-ideographic-space
 linter
 remote-ftp
+atom-ide-ui
