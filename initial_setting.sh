@@ -47,8 +47,4 @@ LANG=C xdg-user-dirs-gtk-update ;
 sudo sed -i -e "s|<layout>default</layout>|<layout>jp</layout>|" /usr/share/ibus/component/mozc.xml ;
 # mozcを日本語配列に変更
 
-if !(cat /etc/systemd/resolved.conf | grep Domains=maetel.ecc.ac.jp > /dev/null 2>&1) ; then
-sudo echo -e "\nDNS=10.201.10.1 10.201.10.2 10.201.10.3 8.8.8.8 8.8.4.4 \nDomains=maetel.ecc.ac.jp" | sudo tee -a /etc/systemd/resolved.conf
-fi
-# 学校のdnsとgoogleのdns
 
