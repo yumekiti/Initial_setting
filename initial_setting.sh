@@ -24,12 +24,12 @@ fi
 if !(type chrome-gnome-shell > /dev/null 2>&1) ; then
 sudo apt -y install chrome-gnome-shell
 fi
-# デスクトップカスタマイズ
+# java
 if !(type java > /dev/null 2>&1) ; then
 sudo apt -y install openjdk-14-jdk
 fi 
 
-sudo timedatectl set-local-rtc true ;
+#sudo timedatectl set-local-rtc true ;
 # win10 9時間ずらす
 
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%Y年%m月%d日\(%a\) %H時%M分%S秒'" ;
@@ -51,4 +51,5 @@ sudo apt -y remove aisleriot
 sudo apt -y remove gnome-mines
 sudo apt -y remove gnome-mahjongg
 sudo apt -y remove gnome-sudoku
+# 要らないソフトの削除
 
