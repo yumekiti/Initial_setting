@@ -47,4 +47,8 @@ LANG=C xdg-user-dirs-gtk-update ;
 sudo sed -i -e "s|<layout>default</layout>|<layout>jp</layout>|" /usr/share/ibus/component/mozc.xml ;
 # mozcを日本語配列に変更
 
+sudo apt -y remove aisleriot
+sudo apt -y remove gnome-mines
+sudo apt -y remove gnome-mahjongg
+sudo apt -y remove gnome-sudoku
 
