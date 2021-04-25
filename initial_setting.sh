@@ -70,11 +70,11 @@ sudo apt -y remove gnome-sudoku ;
 # 要らないソフトの削除
 
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o vscode.deb ;
-sudo apt install ./vscode.deb ;
+sudo apt install -y ./vscode.deb ;
 # vscode install
 
-curl -L https://discord.com/api/download?platform=linux&format=deb -o discode.deb ;
-sudo apt install ./discode.deb ;
+curl -L https://dl.discordapp.net/apps/linux/0.0.14/discord-0.0.14.deb -o discode.deb ;
+sudo apt install -y ./discode.deb ;
 # discode
 
 wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor > packages.google.gpg ;
