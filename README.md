@@ -8,5 +8,5 @@ apm install --packages-file atom.txt
 
 ubuntu
 ```
-bash initial_setting.sh
+make init
 ```
