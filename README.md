@@ -3,7 +3,7 @@
 
 atomパッケージインストール
 ```
-apm install --packages-file atom.txt
+make atompac
 ```
 
 ubuntu
