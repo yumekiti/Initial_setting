@@ -10,3 +10,8 @@ ubuntu
 ```
 make init
 ```
+
+chrome
+```
+https://www.google.com/intl/ja_jp/chrome/
+```
