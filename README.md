@@ -15,3 +15,9 @@ chrome
 ```
 https://www.google.com/intl/ja_jp/chrome/
 ```
+
+screen
+```
+cat bash.txt >> ~/.bashrc
+cat screenrc.txt >> ~/.screenrc
+```
