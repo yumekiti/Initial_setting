@@ -21,3 +21,8 @@ screen
 cat bash.txt >> ~/.bashrc
 cat screenrc.txt >> ~/.screenrc
 ```
+
+vim
+```
+:PlugInstall
+```

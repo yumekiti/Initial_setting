@@ -31,11 +31,6 @@ sudo apt -y install chrome-gnome-shell ;
 fi
 # デスクトップカスタマイズ
 
-if !(type java > /dev/null 2>&1) ; then
-sudo apt -y install openjdk-14-jdk ;
-fi 
-# java
-
 # sudo timedatectl set-local-rtc true ;
 # win10 9時間ずらす
 
@@ -85,3 +80,15 @@ sudo apt-get install apt-transport-https ;
 sudo apt-get update ;
 sudo apt-get install -y google-chrome-stable ;
 # chrome
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# vim-plug
+
+if !(type neovim > /dev/null 2>&1) ; then
+sudo apt -y install neovim ;
+fi
+# nvim
+
+curl -sL install-node.vercel.app/lts | bash
+# coc.nvim
