@@ -1,4 +1,0 @@
-# screen auto
-if [ ${TERM:0:6} != "screen" ]; then
-        screen -R
-fi
