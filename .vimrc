@@ -48,4 +48,10 @@ let g:airline#extensions#tabline#buffer_idx_format = {
         \ '3': '3 ',
         \ '4': '4 ',
         \ '5': '5 ',
+        \ '6': '6 ',
+        \ '7': '7 ',
+        \ '8': '8 ',
+        \ '9': '9 '
+        \}
 
+call plug#end()
