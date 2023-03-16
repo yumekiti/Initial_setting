@@ -8,9 +8,14 @@ set nowritebackup
 set updatetime=300
 "set signcolumn=yes
 
+set expandtab    " タブをスペースにする
+set tabstop=2    " タブ幅を4スペースにする
+set shiftwidth=2 " インデントを4スペースにする
+
 call plug#begin()
 
 "" nerdtree
+" ファイルツリー
 Plug 'preservim/nerdtree'
 
 "" git
@@ -26,11 +31,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-"" prettier
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'branch': 'release/0.x'
-  \ }
+"" indent
+" インデントをみやすくする
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
@@ -43,14 +46,23 @@ nnoremap <C-t> :NERDTreeFocus<CR>
 "" themes
 let g:airline_theme = 'papercolor'
 
+
 "" coc.nvim
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 
 "" Tab
