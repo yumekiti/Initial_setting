@@ -31,10 +31,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-"" indent
-" インデントをみやすくする
-Plug 'nathanaelkane/vim-indent-guides'
-
 call plug#end()
 
 
