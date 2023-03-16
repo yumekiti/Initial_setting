@@ -10,13 +10,40 @@ set updatetime=300
 
 call plug#begin()
 
-" tree
+"" nerdtree
 Plug 'preservim/nerdtree'
-" let NERDTreeShowHidden=1
-nnoremap <C-t> :NERDTree<CR>
 
-" coc.nvim
+"" git
+" diffを表示する
+Plug 'airblade/vim-gitgutter'
+
+"" coc.nvim
+" 補完
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"" themes
+" テーマ
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+"" prettier
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'branch': 'release/0.x'
+  \ }
+
+call plug#end()
+
+
+"" nerdtree
+let NERDTreeShowHidden=1
+nnoremap <C-t> :NERDTreeFocus<CR>
+
+
+"" themes
+let g:airline_theme = 'papercolor'
+
+"" coc.nvim
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
@@ -25,16 +52,8 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" themes
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme = 'papercolor'
 
-" terminal
-nnoremap sh :belowright :tab terminal<CR>
-tnoremap <C-Q> <C-W>N
-
-" Tab
+"" Tab
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
@@ -54,4 +73,7 @@ let g:airline#extensions#tabline#buffer_idx_format = {
         \ '9': '9 '
         \}
 
-call plug#end()
+
+"" terminal
+nnoremap sh :belowright :tab terminal<CR>
+tnoremap <C-Q> <C-W>N
